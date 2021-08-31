@@ -31,9 +31,9 @@ namespace CardGame
                 }
                 //Console.WriteLine();
             }
-            Players(ref players);
+            CheckPlayers(ref players);
 
-            Cards(ref cards, players);
+            CheckCards(ref cards, players);
 
             string[] playersCard = new string[players * cards];
 
@@ -42,13 +42,13 @@ namespace CardGame
             PlayersCardDrop(cards, players, playersCard);
         }
 
-        private void Players(ref byte players)
+        private void CheckPlayers(ref byte players)
         {
             byte playersTemp = Convert.ToByte(Console.ReadLine());
             if (playersTemp < 2 || playersTemp > 6)
             {
                 Console.WriteLine("введите число игроков от 2 до 6");
-                Players(ref players);
+                CheckPlayers(ref players);
             }
             else
             {
@@ -56,14 +56,14 @@ namespace CardGame
             }
         }
 
-        private void Cards(ref byte cards, byte players)
+        private void CheckCards(ref byte cards, byte players)
         {
             Console.WriteLine("Как раздаем?");
             byte cardsTemp = Convert.ToByte(Console.ReadLine());
             if (players * cardsTemp > 36)
             {
                 Console.WriteLine("Не хватит карт всем игрокам");
-                Cards(ref cards, players);
+                CheckCards(ref cards, players);
             }
             else
             {
@@ -94,6 +94,7 @@ namespace CardGame
                 }
             }
         }
+
         public static void PlayersCardDrop(byte cards, byte players, string[] playersCard)
         {
             if (players > 1)
