@@ -7,72 +7,44 @@ namespace CardGame
         static void Main(string[] args)
         {
             Console.WriteLine("Приветствую в недоигре НеДурак!");
-            Console.WriteLine("♥ ♦ ♣ ♠");
-            Console.WriteLine("Сколько будет игроков?");
-            byte players = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine("          ♥ ♦ ♣ ♠");
+            Console.WriteLine("   Сколько будет игроков?");
 
-            Console.WriteLine("Как раздаем?");
-            byte cards = Convert.ToByte(Console.ReadLine());
+            CardGameClass game1 = new CardGameClass();
 
 
-            string[][] massCardsTest =
-            {
-                new string[] { "6♥", "7♥", "8♥", "9♥", "10♥", "J♥", "Q♥", "K♥", "A♥" },
-                new string[] { "6♦", "7♦", "8♦", "9♦", "10♦", "J♦", "Q♦", "K♦", "A♦" },
-                new string[] { "6♣", "7♣", "8♣", "9♣", "10♣", "J♣", "Q♣", "K♣", "A♣" },
-                new string[] { "6♠", "7♠", "8♠", "9♠", "10♠", "J♠", "Q♠", "K♠", "A♠" }
-            };
-
-            int m = 0;
-            string[] massCards = new string[36];
-            for (int i = 0; i < 4; i++)
-            {
-                for (int k = 0; k < 9; k++)
-                {
-                    massCards[m] = massCardsTest[i][k];
-                    //Console.Write(massCards[m] + " ");
-                    m++;
-                }
-                //Console.WriteLine();
-            }
-
-            string[] Player1Card = new string[36];
-            bool repeat;
-
-            //int r1 = rnd.Next(1, 37);
-            //int r2 = rnd.Next(1, 37);
-            //int r3 = rnd.Next(1, 37);
-            //int r4 = rnd.Next(1, 37);
-            //int r5 = rnd.Next(1, 37);
-            //int r6 = rnd.Next(1, 37);
-
-            for (int i = 0; i < 6;)
-            {
-                repeat = true;
-                Random rnd = new Random();
-                Player1Card[i] = massCards[rnd.Next(0, 36)];
-                for (int k = 1; k <= i; k++)
-                {
-                    if (Player1Card[i] == Player1Card[i - k])
-                    {
-                        repeat = false;
-                    }
-                }
-                if (repeat)
-                {
-                    Console.WriteLine(Player1Card[i]);
-                    i++;
-                }
-            }
 
 
-            //for (int i = 0; i < Player1Card.Length; i++)
+            #region массивы карт игроков
+            //string[] Player1Card = new string[cards];
+            //if (players > 1 )
             //{
-            //    Console.Write("{0}-е число: ", i + 1);
-            //    Player1Card[i] = Int32.Parse(Console.ReadLine());
+            //    string[] Player2Card = new string[cards];
             //}
 
-            // сортировка
+            //if (players > 2)
+            //{
+            //    string[] Player3Card = new string[cards];
+            //}
+
+            //if (players > 3)
+            //{
+            //    string[] Player4Card = new string[cards];
+            //}
+
+            //if (players > 4)
+            //{
+            //    string[] Player3Card = new string[cards];
+            //}
+
+            //if (players > 5)
+            //{
+            //    string[] Player6Card = new string[cards];
+            //}
+            #endregion
+
+
+            ////сортировка
             //int temp;
             //for (int i = 0; i < Player1Card.Length - 1; i++)
             //{
@@ -87,7 +59,7 @@ namespace CardGame
             //    }
             //}
 
-            // вывод
+            ////вывод
             //Console.WriteLine("Вывод отсортированного массива");
             //for (int i = 0; i < Player1Card.Length; i++)
             //{
@@ -95,12 +67,6 @@ namespace CardGame
             //}
             //Console.ReadLine();
 
-            //Console.WriteLine(r1);
-            //Console.WriteLine(r2);
-            //Console.WriteLine(r3);
-            //Console.WriteLine(r4);
-            //Console.WriteLine(r5);
-            //Console.WriteLine(r6);
 
 
         }
